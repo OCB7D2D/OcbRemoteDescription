@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{7039f801-46a5-4546-8a29-cfd87e46e93d}") = "OcbRemoteDescription", "OcbRemoteDescription.csproj", "{dbf2e886-4bb5-4191-ab4c-46e738ec658a}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{dbf2e886-4bb5-4191-ab4c-46e738ec658a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{dbf2e886-4bb5-4191-ab4c-46e738ec658a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{dbf2e886-4bb5-4191-ab4c-46e738ec658a}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{dbf2e886-4bb5-4191-ab4c-46e738ec658a}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A6D15A6-0F56-4EED-BC96-94402F38CF65}
+	EndGlobalSection
+EndGlobal
