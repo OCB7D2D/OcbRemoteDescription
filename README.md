@@ -27,6 +27,6 @@ See [OcbPlantGrowInfo][1] for a demo implementation.
 
 I've developed and tested this Mod against version a20.3(b3).
 
-[1]: https://github.com/OCB7D2D/OcbRemoteDescription
+[1]: https://github.com/OCB7D2D/OcbPlantGrowInfo
 [2]: https://github.com/OCB7D2D/OcbRemoteDescription/actions/workflows/ci.yml
 [3]: https://github.com/OCB7D2D/OcbRemoteDescription/actions/workflows/ci.yml/badge.svg
