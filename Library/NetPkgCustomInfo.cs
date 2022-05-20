@@ -7,7 +7,7 @@
     public static ulong LastTick = 0;
 
     private Vector3i Position = Vector3i.zero;
-    private int Type = BlockValue.Air.type;
+    private int BlockType = BlockValue.Air.type;
     private string Text = string.Empty;
 
     // Request server to answer with custom description
@@ -18,7 +18,7 @@
     {
         Position = position == null ? Vector3i.zero : position;
         Text = string.Empty;
-        Type = 0;
+        BlockType = 0;
         return this;
     }
 
@@ -27,7 +27,7 @@
     {
         Position = position == null ? Vector3i.zero : position;
         Text = text == null ? string.Empty : text;
-        Type = type;
+        BlockType = type;
         return this;
     }
 
@@ -38,7 +38,7 @@
             _br.ReadInt32(),
             _br.ReadInt32());
         Text = _br.ReadString();
-        Type = _br.ReadInt32();
+        BlockType = _br.ReadInt32();
     }
 
     public override void write(PooledBinaryWriter _bw)
@@ -48,7 +48,7 @@
         _bw.Write(Position.y);
         _bw.Write(Position.z);
         _bw.Write(Text);
-        _bw.Write(Type);
+        _bw.Write(BlockType);
     }
 
     public override void ProcessPackage(World _world, GameManager _callbacks)
@@ -59,7 +59,7 @@
             LastTick = GameTimer.Instance.ticks;
             LastPosition = Position;
             LastText = Text;
-            LastType = Type;
+            LastType = BlockType;
         }
         else
         {

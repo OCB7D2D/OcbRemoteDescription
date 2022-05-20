@@ -33,6 +33,7 @@ public class OcbRemoteDescription : IModApi
             BlockValue _bv,
             ref string __result)
         {
+            __result = string.Empty; // Reset the result
             if (_bv.type == BlockValue.Air.type) return true;
             if (!_bv.Block.Properties.GetBool("RemoteDescription")) return true;
             if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
