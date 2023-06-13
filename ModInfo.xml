@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xml>
-	<ModInfo>
-		<Name value="OcbRemoteDescription" />
-		<Description value="Remote custom block descriptions over network" />
-		<Website value="https://github.com/OCB7D2D/OcbRemoteDescription" />
-		<Author value="ocbMaurice" />
-		<Version value="0.1.0" compat="A20"/>
-	</ModInfo>
+	<Name value="OcbRemoteDescription" />
+	<DisplayName value="OCB Remote Description Core Mod (needed for MP)" />
+	<Description value="Add support for custom block descriptions over network" />
+	<Website value="https://github.com/OCB7D2D/OcbRemoteDescription" />
+	<Author value="ocbMaurice" />
+	<Version value="0.2.0" />
 </xml>

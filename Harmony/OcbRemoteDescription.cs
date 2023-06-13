@@ -1,10 +1,5 @@
 using HarmonyLib;
-using UnityEngine;
 using System.Reflection;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 
 public class OcbRemoteDescription : IModApi
 {
@@ -12,11 +7,10 @@ public class OcbRemoteDescription : IModApi
     public static ulong ResultsValid = 300;
     public static ulong ResultsRefresh = 50;
 
-    // Entry class for A20 patching
     public void InitMod(Mod mod)
     {
-        Log.Out("Loading OCB Remote Description Patch: " + GetType().ToString());
-        var harmony = new Harmony(GetType().ToString());
+        Log.Out("OCB Harmony Patch: " + GetType().ToString());
+        Harmony harmony = new Harmony(GetType().ToString());
         harmony.PatchAll(Assembly.GetExecutingAssembly());
     }
 
@@ -33,11 +27,11 @@ public class OcbRemoteDescription : IModApi
             BlockValue _bv,
             ref string __result)
         {
-            __result = string.Empty; // Reset the result
             if (_bv.type == BlockValue.Air.type) return true;
             if (!_bv.Block.Properties.GetBool("RemoteDescription")) return true;
             if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
             {
+                __result = string.Empty; // Reset the result
                 // Check if cached information is still valid
                 bool refresh = NetPkgCustomInfo.LastType != _bv.type ||
                     NetPkgCustomInfo.LastPosition != _blockPos;
