@@ -28,6 +28,8 @@ See [OcbPlantGrowInfo][1] for a demo implementation.
 [Download from GitHub releases][4] and extract into your A20 Mods folder!  
 Ensure you don't have double nested folders and ModInfo.xml is at right place!
 
+## Changelog
+
 ### Version 0.2.0
 
 - Update compatibility for 7D2D A21.0(b313)
@@ -38,7 +40,7 @@ Ensure you don't have double nested folders and ModInfo.xml is at right place!
 
 ## Compatibility
 
-I've developed and tested this Mod against version a20.3(b3).
+Developed initially for version a20.3(b3), updated through A21.0(b313).
 
 [1]: https://github.com/OCB7D2D/OcbPlantGrowInfo
 [2]: https://github.com/OCB7D2D/OcbRemoteDescription/actions/workflows/ci.yml
