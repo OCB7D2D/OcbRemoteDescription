@@ -6,6 +6,14 @@
     public static string LastText = string.Empty;
     public static ulong LastTick = 0;
 
+    public static void ResetInfo()
+    {
+        LastPosition = Vector3i.zero;
+        LastType = BlockValue.Air.type;
+        LastText = string.Empty;
+        LastTick = 0;
+    }
+
     private Vector3i Position = Vector3i.zero;
     private int BlockType = BlockValue.Air.type;
     private string Text = string.Empty;

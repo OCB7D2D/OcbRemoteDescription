@@ -6,12 +6,15 @@ public class OcbRemoteDescription : IModApi
 
     public static ulong ResultsValid = 300;
     public static ulong ResultsRefresh = 50;
+    public static ulong RefreshDelay = 15;
 
     public void InitMod(Mod mod)
     {
         Log.Out("OCB Harmony Patch: " + GetType().ToString());
         Harmony harmony = new Harmony(GetType().ToString());
         harmony.PatchAll(Assembly.GetExecutingAssembly());
+        // Make sure to reset all data when a new game is started
+        ModEvents.GameStartDone.RegisterHandler(NetPkgCustomInfo.ResetInfo);
     }
 
 
@@ -32,9 +35,12 @@ public class OcbRemoteDescription : IModApi
             if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
             {
                 __result = string.Empty; // Reset the result
+                var wait = ResultsRefresh; // Default wait time
                 // Check if cached information is still valid
                 bool refresh = NetPkgCustomInfo.LastType != _bv.type ||
                     NetPkgCustomInfo.LastPosition != _blockPos;
+                // Faster refresh at new position
+                if (refresh) wait = RefreshDelay;
                 // Data still valid?
                 if (!refresh)
                 {
@@ -44,9 +50,9 @@ public class OcbRemoteDescription : IModApi
                         __result = NetPkgCustomInfo.LastText;
                     }
                     // Refresh if data is going to be out of sync soonish
-                    refresh = NetPkgCustomInfo.LastTick + ResultsRefresh < GameTimer.Instance.ticks;
+                    refresh = NetPkgCustomInfo.LastTick + wait < GameTimer.Instance.ticks;
                 }
-                if (refresh && LastAsk + ResultsRefresh < GameTimer.Instance.ticks)
+                if (refresh && (LastAsk + wait < GameTimer.Instance.ticks))
                 {
                     LastAsk = GameTimer.Instance.ticks;
                     // Try to lazy load the information from the server

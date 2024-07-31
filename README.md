@@ -1,4 +1,4 @@
-# OCB Remote Description Mod - 7 Days to Die (V1.0 exp) Addon
+# OCB Remote Description Mod - 7 Days to Die (V1.0) Addon
 
 This mod is meant to be used by other mods in order to
 provide remote information when looking at blocks. On a
@@ -32,6 +32,12 @@ Otherwise please use one of the [official releases][4] here.
 Only clone or download the repo if you know what you do!
 
 ## Changelog
+
+### Version 0.3.1
+
+- Verified compatibility with V1.0 (b333)
+- Improve responsiveness when looking at new block 
+- Fix issue when re-joining a server without restart
 
 ### Version 0.3.0
 
