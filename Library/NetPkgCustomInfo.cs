@@ -6,7 +6,7 @@
     public static string LastText = string.Empty;
     public static ulong LastTick = 0;
 
-    public static void ResetInfo()
+    public static void ResetInfo(ref ModEvents.SGameStartDoneData _data)
     {
         LastPosition = Vector3i.zero;
         LastType = BlockValue.Air.type;
