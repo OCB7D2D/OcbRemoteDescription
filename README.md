@@ -1,4 +1,4 @@
-# OCB Remote Description Mod - 7 Days to Die (V2.0) Addon
+# OCB Remote Description Mod - 7 Days to Die (V2.1) Addon
 
 This mod is meant to be used by other mods in order to
 provide remote information when looking at blocks. On a
