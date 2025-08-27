@@ -62,7 +62,7 @@
     public override void ProcessPackage(World _world, GameManager _callbacks)
     {
         if (_world == null) return;
-        if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
+        if (!ConnectionManager.Instance.IsServer)
         {
             LastTick = GameTimer.Instance.ticks;
             LastPosition = Position;

@@ -32,7 +32,7 @@ public class OcbRemoteDescription : IModApi
         {
             if (_bv.type == BlockValue.Air.type) return true;
             if (!_bv.Block.Properties.GetBool("RemoteDescription")) return true;
-            if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
+            if (!ConnectionManager.Instance.IsServer)
             {
                 __result = string.Empty; // Reset the result
                 var wait = ResultsRefresh; // Default wait time
@@ -57,7 +57,7 @@ public class OcbRemoteDescription : IModApi
                     LastAsk = GameTimer.Instance.ticks;
                     // Try to lazy load the information from the server
                     // ToDo: use a specific package type for requests!?
-                    SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(
+                    ConnectionManager.Instance.SendToServer(
                         NetPackageManager.GetPackage<NetPkgCustomInfo>()
                             .ToServer(_blockPos));
                 }
